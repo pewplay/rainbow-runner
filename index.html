@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07090d">
+  <title>Rainbow Runner</title>
+  <!--
+    Rainbow Runner — an endless runner.
+    Based on "F1NA113VE1" (Final Level) by Lee Reilly, made for js13kGames 2026.
+    MIT License, Copyright (c) 2026 rainbow-runner contributors (see LICENSE).
+  -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="stage">
+    <canvas id="game" tabindex="0"
+      aria-label="Rainbow Runner, an endless runner. Press Space, Up, W, click or tap to jump. Hold to jump higher. Press again in the air to double jump."></canvas>
+    <p id="rotate-hint" hidden>Rotate your device for a bigger view</p>
+  </main>
+
+  <div id="overlay" role="status" aria-live="polite"></div>
+
+  <button id="mute" type="button" aria-label="Toggle sound" aria-pressed="false">
+    <svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12"/></svg>
+    <svg class="off" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z"/><path class="wave" d="M16.5 9.5l5 5M21.5 9.5l-5 5"/></svg>
+  </button>
+
+  <script src="game.js"></script>
+</body>
+</html>

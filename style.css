@@ -1,0 +1,162 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  background: #07090d;
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+/* The stage fills the whole viewport and catches every tap / click. */
+#stage {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #07090d;
+  touch-action: none;
+  cursor: pointer;
+}
+
+#game {
+  display: block;
+  background: #07090d;
+  touch-action: none;
+  outline: none;
+}
+
+#rotate-hint {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  margin: 0;
+  text-align: center;
+  color: #8b949e;
+  font-size: 15px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+#rotate-hint::before {
+  content: "\21BB  ";
+  color: #39d353;
+  font-weight: 700;
+}
+#rotate-hint[hidden] {
+  display: none;
+}
+
+/* Title / pause screen, drawn in HTML over the whole viewport. */
+#overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8em;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+           max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  text-align: center;
+  background: rgba(7, 9, 13, 0.86);
+  pointer-events: none;
+  line-height: 1.45;
+  font-size: clamp(15px, min(2.2vw, 3.4vh), 20px);
+}
+#overlay[hidden] {
+  display: none;
+}
+#overlay h1 {
+  margin: 0;
+  font-size: clamp(28px, min(6vw, 9vh), 60px);
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  background: linear-gradient(90deg, #ff4d6d, #ff9f1c, #ffe45e, #38d973, #3fa7ff, #8e5cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+#overlay h2 {
+  margin: 0;
+  color: #39d353;
+  font-size: clamp(24px, min(5vw, 8vh), 44px);
+}
+#overlay p {
+  margin: 0;
+  color: #c9d1d9;
+  max-width: 48ch;
+}
+#overlay .k {
+  color: #fff;
+  font-weight: 700;
+}
+#overlay .cta {
+  margin-top: 0.4em;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15em;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+@keyframes pulse {
+  50% { opacity: 0.45; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #overlay .cta { animation: none; }
+}
+/* Short landscape phones: keep the title screen compact. */
+@media (max-height: 430px) {
+  #overlay { gap: 0.45em; line-height: 1.35; }
+  #overlay .extra { display: none; }
+}
+
+#mute {
+  position: fixed;
+  top: max(8px, env(safe-area-inset-top));
+  right: max(8px, env(safe-area-inset-right));
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: rgba(22, 27, 34, 0.8);
+  color: #fff;
+  cursor: pointer;
+  touch-action: none;
+}
+#mute:focus-visible {
+  outline: 2px solid #39d353;
+}
+#mute svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+#mute .wave {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+#mute .off,
+#mute[aria-pressed="true"] .on {
+  display: none;
+}
+#mute[aria-pressed="true"] .off {
+  display: block;
+}

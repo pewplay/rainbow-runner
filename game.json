@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/pewplay/pewplay/main/schema/game.schema.json",
+  "title": "Rainbow Runner",
+  "description": "Double-jump a glowing green square over rainbow unicorn horns in this fast endless runner, free to play in your browser on desktop or mobile.",
+  "about": "Rainbow Runner is a one-button endless runner. Your little green square races across a dark grid on its own, and all you do is jump: tap for a short hop, hold for a big leap and press again in mid-air for a double jump that leaves a double rainbow behind you.\n\nThe run keeps getting faster and stranger. Rainbow-striped unicorn horns sprout from the floor and hang from the ceiling, some fall or spin toward you, and pits, stairs and blocks change the terrain. Later come shy platforms that run away, springs that give up halfway, wind tunnels that flip gravity for a ceiling run and pick-ups you probably should not trust. Chain golden bits for a combo bonus and chase 106,496 bits to clear the final level.\n\nOriginally created by Lee Reilly for js13kGames 2026 as F1NA113VE1.",
+  "howToPlay": "Your square runs automatically; jump to avoid every unicorn horn, pit and falling hazard. Hold the jump longer to go higher and press again in the air to double-jump. Collect golden bits in a row to build a combo bonus, and survive to 106,496 bits to win.",
+  "controls": [
+    { "input": "Space / Up Arrow / W", "action": "Jump (hold for higher, press again in the air to double-jump)" },
+    { "input": "Click", "action": "Jump" },
+    { "input": "Tap", "action": "Jump (hold for higher, tap again in the air to double-jump)" },
+    { "input": "M", "action": "Mute or unmute sound" }
+  ],
+  "tips": [
+    "Blinking exclamation marks warn you about tall, falling and flying horns, so save your double jump for them.",
+    "Tap lightly for low horns and hold only for tall ones, because a full jump can carry you into a ceiling horn.",
+    "After a wind tunnel flips gravity you run on the ceiling and jump downward, so watch the horns hanging from above.",
+    "Grab every golden bit in a row: the combo bonus grows by ten points per bit up to a hundred."
+  ],
+  "faq": [
+    { "question": "Is Rainbow Runner free to play?", "answer": "Yes, it is completely free and runs right in your browser with nothing to install." },
+    { "question": "Can I play Rainbow Runner on a phone or tablet?", "answer": "Yes, tap anywhere to jump and hold for higher jumps. It plays best in landscape; in portrait the game is shown smaller." },
+    { "question": "What happens when I reach 106,496 bits?", "answer": "You clear the final level and win the run; your best distance is saved on your device." }
+  ],
+  "category": "Arcade",
+  "tags": ["endless runner", "one button", "rainbow", "unicorn", "platformer", "retro"],
+  "author": "Lee Reilly",
+  "playMode": "SinglePlayer",
+  "orientation": "landscape",
+  "cover": "cover.png",
+  "screenshots": ["screenshots/1.png", "screenshots/2.png", "screenshots/3.png"],
+  "added": "2026-09-28",
+  "draft": false
+}
